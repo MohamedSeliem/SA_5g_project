@@ -1,0 +1,32 @@
+phase1/
+├── components/                # Core network functions and simulation elements
+│   ├── amf.py                 # Access and Mobility Management Function (AMF)
+│   ├── smf.py                 # Session Management Function (SMF)
+│   ├── upf.py                 # User Plane Function (UPF)
+│   ├── ue.py                  # User Equipment (UE)
+│   └── ran.py                 # Radio Access Network (RAN)
+│
+├── interfaces/                # Protocol-specific communication interfaces
+│   ├── n1_interface.py        # N1 Interface: UE - AMF (NAS over IP)
+│   ├── n2_interface.py        # N2 Interface: RAN - AMF (NGAP over SCTP)
+│   ├── n3_interface.py        # N3 Interface: RAN - UPF (GTP-U)
+│   └── n4_interface.py        # N4 Interface: SMF - UPF (PFCP)
+│
+├── util/                      # Utility files for message structures and authentication
+│   ├── authenticator.py       # Authenticator utility for managing UE credentials and verification
+│   ├── messages/              # Subdirectory for protocol-specific message structures
+│   │   ├── pfcp_message.py    # PFCP message structure for SMF-UPF communication
+│   │   ├── nas_message.py     # NAS message structure for N1 interface
+│   │   ├── ngap_message.py    # NGAP message structure for N2 interface
+│   │   └── gtpu_message.py    # GTP-U message structure for N3 interface
+│
+├── tests/                     # Unit tests for each component and interface
+│   ├── test_amf.py            # Tests for AMF functionality
+│   ├── test_smf.py            # Tests for SMF functionality and SMF-UPF integration
+│   ├── test_upf.py            # Tests for UPF functionality
+│   ├── test_n1_interface.py   # Tests for N1 interface functionality
+│   ├── test_n2_interface.py   # Tests for N2 interface functionality
+│   ├── test_n3_interface.py   # Tests for N3 interface functionality
+│   └── test_n4_interface.py   # Tests for N4 interface functionality
+│
+└── run_all_tests.py           # Script to run all tests in the `tests` directory
